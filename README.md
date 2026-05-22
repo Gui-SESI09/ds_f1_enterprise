@@ -35,7 +35,7 @@ Este é um sistema de gestão focado na área de **Enterprise** para escuderias 
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/Gui-SESI09/ds_f1_enterprise.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+git clone [https://github.com/Gui-SESI09/ds_f1_enterprise.git]
 
 # 2. Acesse a pasta do projeto
 cd ds_f1_enterprise
