@@ -1,17 +1,17 @@
-# Sistema de Gestão Enterprise — F1 in Schools 🏎️💨
+# Sistema de Gestão Enterprise — F1 in Schools
 
 Este é um sistema de gestão focado na área de **Enterprise** para escuderias do programa **F1 in Schools**. O software foi desenvolvido como Projeto Integrador para o curso técnico, com o objetivo de extinguir os gargalos da captação manual e descentralizada de recursos, profissionalizando o controle comercial, financeiro e de marketing da equipe.
 
 ---
 
-## 🚀 Problema vs. Solução
+## Problema vs. Solução
 
 *   **O Gargalo:** Desorganização crônica, perda de contatos comerciais com potenciais patrocinadores e esquecimento no cumprimento de contrapartidas de marketing.
 *   **A Solução:** Centralização de processos em uma única plataforma, garantindo a rastreabilidade das negociações, controle do teto orçamentário e automação de tarefas.
 
 ---
 
-## 📋 Funcionalidades Principais (MVP)
+## Funcionalidades Principais (MVP)
 
 *   **Autenticação Segura:** Controle de acesso para membros autorizados da escuderia.
 *   **Cadastro de Patrocinadores:** Registro centralizado de dados de contato e nicho das empresas.
@@ -22,7 +22,7 @@ Este é um sistema de gestão focado na área de **Enterprise** para escuderias 
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 *   **Front-end:** HTML5, CSS, JavaScript / React
 *   **Back-end:** Node.js / 
@@ -31,7 +31,7 @@ Este é um sistema de gestão focado na área de **Enterprise** para escuderias 
 
 ---
 
-## ⚙️ Como Executar o Projeto (Localmente)
+## Como Executar o Projeto (Localmente)
 
 ```bash
 # 1. Clone o repositório
