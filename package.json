@@ -1,0 +1,18 @@
+{
+  "name": "ds_f1_enterprise",
+  "version": "1.0.0",
+  "description": "Este é um sistema de gestão focado na área de **Enterprise** para escuderias do programa **F1 in Schools**. O software foi desenvolvido como Projeto Integrador para o curso técnico, com o objetivo de extinguir os gargalos da captação manual e descentralizada de recursos, profissionalizando o controle comercial, financeiro e de marketing da equipe.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.8.5",
+    "pg": "^8.21.0"
+  }
+}

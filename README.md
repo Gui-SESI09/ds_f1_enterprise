@@ -25,7 +25,7 @@ Este é um sistema de gestão focado na área de **Enterprise** para escuderias 
 ## Tecnologias Utilizadas
 
 *   **Front-end:** HTML5, CSS, JavaScript / React
-*   **Back-end:** Node.js / 
+*   **Back-end:** Node.js 
 *   **Banco de Dados:** PostgreSQL
 *   **Gestão do Projeto:** GitHub Projects (Kanban)
 
