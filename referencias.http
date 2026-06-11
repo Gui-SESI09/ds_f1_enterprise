@@ -1,0 +1,14 @@
+###
+
+GET http://localhost:3000/usuario
+
+###
+
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Guilherme Dalsasso Machado",
+    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "senha_hash": "12345"
+}
