@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "nome": "Guilherme Dalsasso Machado",
-    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "email": "dasdasdasd@estudante.sesisenai.org.br",
     "senha_hash": "12345"
 }
 
