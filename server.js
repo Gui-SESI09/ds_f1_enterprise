@@ -25,7 +25,17 @@ servidor.post('/usuario', async (request, reply) => {
 })
     
 
-servidor.put()
+servidor.put('/usuario/:id', async (request, reply) => {
+    const id = request.params.id;
+    const body = request.body;
+    const resultado = await sql.query(`UPDATE usuarios SET nome = $1, email = $2, senha_hash = $3 WHERE id = $4 RETURNING nome`, [body.nome, body.email, body.senha_hash, id]) 
+    const nomeAtualizado = resultado.rows[0].nome
+    reply.status(200).send({message: "Os dados do usuario: " + nomeAtualizado + " foram atualizados!"})
+    
+    if (resultado.rows.length === 0) {
+        reply.status(404).send({message: "O ID inserido não foi encontrado no sistema."})
+    }
+})
 
 /*
 servidor.delete()

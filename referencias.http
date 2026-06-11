@@ -12,3 +12,15 @@ Content-Type: application/json
     "email": "guilherme_machado18@estudante.sesisenai.org.br",
     "senha_hash": "12345"
 }
+
+###
+
+PUT http://localhost:3000/usuario/1
+Content-Type: application/json
+
+{
+    "nome": "Guilherme Dalsasso Machado",
+    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "senha_hash": "123456",
+    "id": 1
+}
