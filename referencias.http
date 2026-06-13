@@ -8,19 +8,24 @@ POST http://localhost:3000/usuario
 Content-Type: application/json
 
 {
-    "nome": "Guilherme Dalsasso Machado",
-    "email": "dasdasdasd@estudante.sesisenai.org.br",
+    "nome": "José Vitor Sabadini Medeiros",
+    "email": "jose_vs_medeiros@estudante.sesisenai.org.br",
     "senha_hash": "12345"
 }
 
 ###
 
-PUT http://localhost:3000/usuario/1
+PUT http://localhost:3000/usuario/29
 Content-Type: application/json
 
 {
     "nome": "Guilherme Dalsasso Machado",
-    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "email": "guilherme_mAchado18@estudante.sesisenai.org.br",
     "senha_hash": "123456",
     "id": 1
 }
+
+###
+
+DELETE http://localhost:3000/usuario/29
+
