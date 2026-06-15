@@ -1,4 +1,5 @@
 import { usuariosController  } from "../controllers/usuariosControllers.js";
+import { validarUsuario  } from "../middlewares/usuariosValidate.js";
 
 export default async function rotasUsuario(servidor, options) {
 
@@ -8,11 +9,11 @@ export default async function rotasUsuario(servidor, options) {
     return usuariosController.get_u(request, reply, sql);
     });
 
-    servidor.post('/usuario', async (request, reply) => {
+    servidor.post('/usuario', {prehandler: validarUsuario}, async (request, reply) => {
     return usuariosController.post_u(request, reply, sql);
     });
 
-    servidor.put('/usuario/:id', async (request, reply) => {
+    servidor.put('/usuario/:id', {prehandler: validarUsuario}, async (request, reply) => {
     return usuariosController.put_u(request, reply, sql);
     });
 

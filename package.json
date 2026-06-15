@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^5.8.5",
+    "morgan": "^1.11.0",
     "pg": "^8.21.0"
   }
 }
