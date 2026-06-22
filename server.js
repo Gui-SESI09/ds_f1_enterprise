@@ -3,6 +3,7 @@ import { Pool } from "pg";
 import rotasUsuario from "./src/routes/usuarios.js";
 import morgan from "morgan";
 import { errorHandler } from "./src/middlewares/errorHandler.js";
+import fastifyJwt from "@fastify/jwt";
 
 const sql = new Pool ({
     host: 'localhost',
@@ -22,6 +23,7 @@ servidor.addHook('onRequest', (request, reply, done) => {
 servidor.setErrorHandler(errorHandler);
 
 servidor.register(rotasUsuario, { sql });
+servidor.register(fastifyJwt, {secret: process.env.JWT_SECRET || 'senhasegura'});
 
 servidor.setNotFoundHandler((request, reply) => {
     reply.status(404).send({message: `A rota ${request.method} ${request.url} não foi encontrada no sistema!`});

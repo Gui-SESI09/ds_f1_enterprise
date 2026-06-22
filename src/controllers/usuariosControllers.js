@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt';
+
 export const usuariosController = {
     
     async get_u(request, reply, sql) {
@@ -15,17 +17,22 @@ export const usuariosController = {
         const id = request.params.id;
         const body = request.body;
         const resultado = await sql.query(`UPDATE usuarios SET nome = $1, email = $2, senha_hash = $3 WHERE id = $4 RETURNING nome`, [body.nome, body.email, body.senha_hash, id]);
-        const nomeAtualizado = resultado.rows[0].nome
-        reply.status(200).send({message: "Os dados do usuario: " + nomeAtualizado + " foram atualizados!"});
         
         if (resultado.rows.length === 0) {
             reply.status(404).send({error: "O ID inserido não foi encontrado no sistema."})
         }
+        
+        const nomeAtualizado = resultado.rows[0].nome
+        reply.status(200).send({message: "Os dados do usuario: " + nomeAtualizado + " foram atualizados!"});
     },
     
     async delete_u (request, reply, sql) {
         const id = request.params.id;
         const resultado = await sql.query(`DELETE FROM usuarios where id = $1`, [id]);
         reply.status(200).send({message:"O usuário com o id: " + id + " foi deletado com sucesso!"});
+    },
+
+    async login_u (request, reply) {
+        
     }
 }
