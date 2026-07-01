@@ -1,6 +1,7 @@
-###
+### 
 
 GET http://localhost:3000/usuario
+Authorization: Bearer 
 
 ###
 
@@ -9,23 +10,32 @@ Content-Type: application/json
 
 {
     "nome": "Giulia Scharman Henrique",
-    "email": "giulia_haenrique@estudante.sesisenai.org.br",
+    "email": "giulia_haenriqaue@estudante.sesisenai.org.br",
     "senha_hash": "12354"
 }
 
 ###
 
-PUT http://localhost:3000/usuario/89
+PUT http://localhost:3000/usuario/93
 Content-Type: application/json
 
 {
     "nome": "Guilherme Dalsasso Machado",
-    "email": "guilherme_mAchado18@estudante.sesisenai.org.br",
+    "email": "guilher2e_mAchado18@estudante.sesisenai.org.br",
     "senha_hash": "123456",
     "id": 1
 }
 
 ###
 
-DELETE http://localhost:3000/usuario/89
+DELETE http://localhost:3000/usuario/93
 
+### LOGIN
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "senha_hash": "12345"
+}

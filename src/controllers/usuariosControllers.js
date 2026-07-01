@@ -32,7 +32,27 @@ export const usuariosController = {
         reply.status(200).send({message:"O usuário com o id: " + id + " foi deletado com sucesso!"});
     },
 
-    async login_u (request, reply) {
-        
+    async login_u(request, reply, sql) {
+    const body = request.body;
+
+    const resultado = await sql.query(`SELECT * FROM usuarios WHERE email = $1 AND ativo = TRUE`, [body.email]);
+
+    if (resultado.rows.length === 0) {
+        return reply.status(401).send({ error: "Credenciais inválidas." });
+    }
+
+    const usuario = resultado.rows[0];
+    const senhaCorreta = await bcrypt.compare(body.senha, usuario.senha_hash);
+
+    if (!senhaCorreta) {
+        return reply.status(401).send({ error: "Credenciais inválidas." });
+    }
+
+    const token = await reply.jwtSign(
+        { id: usuario.id, email: usuario.email },
+        { expiresIn: '8h' }
+    );
+
+    reply.status(200).send({ token });
     }
 }

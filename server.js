@@ -15,6 +15,8 @@ const sql = new Pool ({
 
 const servidor = Fastify();
 
+servidor.register(fastifyJwt, {secret: process.env.JWT_SECRET || 'senhasegura'});
+
 const logger = morgan ('dev');
 servidor.addHook('onRequest', (request, reply, done) => {
     logger(request.raw, reply.raw, done);
@@ -23,7 +25,6 @@ servidor.addHook('onRequest', (request, reply, done) => {
 servidor.setErrorHandler(errorHandler);
 
 servidor.register(rotasUsuario, { sql });
-servidor.register(fastifyJwt, {secret: process.env.JWT_SECRET || 'senhasegura'});
 
 servidor.setNotFoundHandler((request, reply) => {
     reply.status(404).send({message: `A rota ${request.method} ${request.url} não foi encontrada no sistema!`});
