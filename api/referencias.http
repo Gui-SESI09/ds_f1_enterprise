@@ -1,0 +1,83 @@
+@url = http://localhost:3000
+
+### ---------- PATROCINADORES ----------
+
+### Listar todos
+GET {{url}}/patrocinadores
+
+### Listar filtrando pela etapa do funil
+GET {{url}}/patrocinadores?status=Prospecção
+
+### Buscar por id
+GET {{url}}/patrocinadores/1
+
+### Buscar id inexistente (deve dar 404)
+GET {{url}}/patrocinadores/999
+
+### Cadastrar
+POST {{url}}/patrocinadores
+Content-Type: application/json
+
+{
+    "razao_social": "Metalurgica Santa Catarina LTDA",
+    "cnpj": "12.345.678/0001-90",
+    "nome_contato": "Ricardo Alves",
+    "email": "ricardo@metalsc.com.br",
+    "telefone": "(47) 99999-0000",
+    "nicho": "Metalurgia",
+    "area_colaboracao": "Usinagem do bloco"
+}
+
+### Cadastrar sem razao_social (deve dar 400)
+POST {{url}}/patrocinadores
+Content-Type: application/json
+
+{
+    "cnpj": "11.111.111/0001-11"
+}
+
+### Cadastrar com status invalido (deve dar 400)
+POST {{url}}/patrocinadores
+Content-Type: application/json
+
+{
+    "razao_social": "Empresa Teste",
+    "cnpj": "22.222.222/0001-22",
+    "status_crm": "Quase la"
+}
+
+### Mover no funil (atualizacao parcial)
+PUT {{url}}/patrocinadores/1
+Content-Type: application/json
+
+{
+    "status_crm": "Proposta Enviada"
+}
+
+### Remover
+DELETE {{url}}/patrocinadores/1
+
+### ---------- USUARIOS ----------
+
+### 
+GET {{url}}/usuario
+Authorization: Bearer 
+
+###
+POST {{url}}/usuario
+Content-Type: application/json
+
+{
+    "nome": "Guilherme Dalsasso Machado",
+    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "senha_hash": "123456"
+}
+
+### LOGIN
+POST {{url}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "guilherme_machado18@estudante.sesisenai.org.br",
+    "senha_hash": "123456"
+}
